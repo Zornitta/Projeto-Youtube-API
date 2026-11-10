@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube API v3</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <h1>YouTube API v3</h1>
+            <p>Últimos vídeos dos canais selecionados</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controles">
+            <div class="campo">
+                <label for="canal">Canal</label>
+                <select id="canal"></select>
+            </div>
+
+            <div class="campo campo-pesquisa">
+                <label for="pesquisa">Pesquisar vídeos</label>
+                <input type="search" id="pesquisa" placeholder="Digite um termo...">
+            </div>
+        </section>
+
+        <section id="infoCanal" class="info-canal"></section>
+
+        <section id="loading" class="loading oculto">
+            <div class="spinner"></div>
+            <p>Carregando vídeos...</p>
+        </section>
+
+        <section id="mensagem" class="mensagem oculto"></section>
+
+        <section id="videos" class="videos"></section>
+
+        <div class="paginacao">
+            <button id="carregarMais" class="botao oculto">Carregar mais</button>
+        </div>
+    </main>
+
+    <dialog id="modalVideo" class="modal-video">
+        <button id="fecharModal" class="modal-fechar" title="Fechar">×</button>
+
+        <div class="modal-player">
+            <iframe id="playerVideo"
+                    title="Reprodutor de vídeo do YouTube"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </dialog>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
